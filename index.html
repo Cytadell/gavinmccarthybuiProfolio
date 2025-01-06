@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gavin's Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: #013220;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(11, 255, 135, 0.8);
+            border-radius: 50%;
+            animation: float infinite linear;
+            box-shadow: 0 0 8px rgba(11, 255, 135, 0.8);
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh); /* Start below the screen */
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5; /* Fade in as the particle starts floating */
+            }
+            90% {
+                opacity: 0.5; /* Fully visible during the majority of the animation */
+            }
+            100% {
+                transform: translateY(-10vh); /* End above the screen */
+                opacity: 0; /* Fade out as the particle leaves */
+            }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        const createParticles = () => {
+            const numParticles = 40; // Number of particles
+            for (let i = 0; i < numParticles; i++) {
+                const particle = document.createElement("div");
+                particle.className = "particle";
+
+                // Set random starting horizontal position
+                particle.style.left = Math.random() * 100 + "vw";
+
+                // Set random animation duration to vary speed
+                const animationDuration = Math.random() * 8 + 6; // Between 6s and 14s
+                particle.style.animationDuration = animationDuration + "s";
+
+                // Set random animation delay to spread out particles
+                particle.style.animationDelay = Math.random() * 10 + "s";
+
+                // Append particle to the body
+                document.body.appendChild(particle);
+            }
+        };
+
+        createParticles(); // Create the particles
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+h1 {
+        font-size: 40px;
+        text-align: center;
+}
+
+p {
+        font-size: 25px;
+}
+
+li {
+        font-size: 25px;
+}
+
+a:link, a:visited {
+        color: white;
+        padding: 25px 35px;
+        text-align: center;
+        text-decoration: none;
+        background-color: #003366;
+        display: inline-block;
+}
+
+a:hover{
+        background-color: #0464c5; 
+}
+
+body {
+        background-color: #010721;
+        background-size: cover;
+        color: #ffffff;
+        margin: 0;
+        padding: 0;
+}
+
+html {
+        margin: 0;
+        padding: 0;
+}
